@@ -54,7 +54,7 @@ Azure Arc supports the following Windows and Linux operating systems. Only x86-6
 **Azure ARC Connectivity **
 
 | Agent resource  |Description | When required  |Endpoint used with private link|
-| ------------- | ------------- | ------------- | ------------- |
+| --------------- | ---------- | ------------- | -------------------------------|
 |aka.ms | Used to resolve the download script during installation | At installation time, only | Public |
 | download.microsoft.com  | Used to download the Windows installation package  | At installation time, only  | Public  |
 | packages.microsoft.com | Used to download the Linux installation package | At installation time, only | Public  |
@@ -73,10 +73,18 @@ Azure Arc supports the following Windows and Linux operating systems. Only x86-6
 |san-af-<region>-prod.azurewebsites.net  | Azure Arc data processing service  | For SQL Server enabled by Azure Arc. The Azure Extension for SQL Server uploads inventory and billing information to the data processing service. | Public  |
 
 
+[Connected Machine agent network requirements](https://learn.microsoft.com/en-us/azure/azure-arc/servers/network-requirements?tabs=azure-cloud) 
 
+**Azure Monitor Agent**
+| Endpoint      | Purpose       | Port          | Direction     | Bypass HTTPS inspection  |
+| ------------- | ------------- | ------------- | ------------- |--------------------------|
+| global.handler.control.monitor.azure.com | Access control service  | Port 443  | Outbound  | Yes           |
+| <virtual-machine-region-name>.handler.control.monitor.azure.com  | Fetch data collection rules for specific machine  | Port 443 | Outbound  | Yes  |
+| <log-analytics-workspace-id>.ods.opinsights.azure.com | Ingest logs data  | Port 443  | Outbound  | Yes |
+| management.azure.com | [Only needed if sending time series data (metrics) to Azure Monitor Custom metrics database](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/metrics-custom-overview)  | Port 443  | Outbound  | Yes  |
+| <virtual-machine-region-name>.monitoring.azure.com  | [Only needed if sending time series data (metrics) to Azure Monitor Custom metrics database](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/metrics-custom-overview)  | Port 443  | Outbound  | Yes  |
 
+[Define Azure Monitor Agent network settings - Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-data-collection-endpoint?tabs=PowerShellWindows#firewall-requirements) 
 
-
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+**Defender For Server**
+[MDE URLS](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fdownload.microsoft.com%2Fdownload%2F6%2Fb%2Ff%2F6bfff670-47c3-4e45-b01b-64a2610eaefa%2Fmde-urls-commercial.xlsx&wdOrigin=BROWSELINK) 
