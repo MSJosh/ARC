@@ -63,7 +63,7 @@ Azure Arc supports the following Windows and Linux operating systems. Only x86-6
 | pas.windows.net  | Microsoft Entra ID  | Always  | Public  |
 | management.azure.com  | Azure Resource Manager - to create or delete the Arc server resource  | When connecting or disconnecting a server, only  | [Public, unless a resource management private link is also configured](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/create-private-link-access-portal)  |
 | *.his.arc.azure.com | Metadata and hybrid identity services  | Always  | Private |
-| *.guestconfiguration.azure.com |Notification service for extension and connectivity scenarios  | Always  | Public  |
+| *.guestconfiguration.azure.com |Extension management and guest configuration services  | Always  | Private  |
 | *.guestnotificationservice.azure.com | Notification service for extension and connectivity scenarios  | If using SSH or Windows Admin Center from Azure    | Public  |
 | azgn*.servicebus.windows.net | Notification service for extension and connectivity scenarios | Always | Public  |
 | *.servicebus.windows.net  | For Windows Admin Center and SSH scenarios  | CIf using SSH or Windows Admin Center from Azure  | Public |
