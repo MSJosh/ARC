@@ -41,3 +41,42 @@ Azure Arc supports the following Windows and Linux operating systems. Only x86-6
     
 [Supported operating systems](https://learn.microsoft.com/en-us/azure/azure-arc/servers/prerequisites#supported-operating-systems)
 
+**Network Connectivity**
+
+![image](https://github.com/MSJosh/ARC/assets/120500937/164c9343-385b-4d10-b239-6942decc40c5)
+
+[Network topology and connectivity for Azure Arc-enabled servers](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/hybrid/arc-enabled-servers/eslz-arc-servers-connectivity)
+
+•	All connections are TCP unless otherwise specified.
+•	All HTTP connections use HTTPS and SSL/TLS with officially signed and verifiable certificates.
+•	All connections are outbound unless otherwise specified.
+
+**Azure ARC Connectivity **
+
+| Agent resource  |Description | When required  |Endpoint used with private link|
+| ------------- | ------------- | ------------- | ------------- |
+|aka.ms | Used to resolve the download script during installation | At installation time, only | Public |
+| download.microsoft.com  | Used to download the Windows installation package  | At installation time, only  | Public  |
+| packages.microsoft.com | Used to download the Linux installation package | At installation time, only | Public  |
+| login.windows.net  | Microsoft Entra ID  | Always  | Public |
+| login.microsoftonline.com  | Microsoft Entra ID | Always  | Public  |
+| pas.windows.net  | Microsoft Entra ID  | Always  | Public  |
+| management.azure.com  | Azure Resource Manager - to create or delete the Arc server resource  | When connecting or disconnecting a server, only  | [Public, unless a resource management private link is also configured](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/create-private-link-access-portal)  |
+| *.his.arc.azure.com | Metadata and hybrid identity services  | Always  | Private |
+| *.guestconfiguration.azure.com | Content Cell  | Always  | Private  |
+| *.guestnotificationservice.azure.com | Notification service for extension and connectivity scenarios  | If using SSH or Windows Admin Center from Azure    | Public  |
+| azgn*.servicebus.windows.net | Content Cell  | Content Cell  | Public  |
+| *.servicebus.windows.net  | Content Cell  | Content Cell  | Public |
+| *.waconazure.com  | Content Cell  | Content Cell  | Public  |
+| *.blob.core.windows.net| Download source for Azure Arc-enabled servers’ extensions | Always, except when using private endpoints  |Not used when private link is configured  |
+| dc.services.visualstudio.com | Content Cell  | Content Cell  | Public  |
+|san-af-<region>-prod.azurewebsites.net  | Content Cell  | Content Cell  | Public  |
+
+
+
+
+
+
+| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
