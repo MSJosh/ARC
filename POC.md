@@ -63,14 +63,14 @@ Azure Arc supports the following Windows and Linux operating systems. Only x86-6
 | pas.windows.net  | Microsoft Entra ID  | Always  | Public  |
 | management.azure.com  | Azure Resource Manager - to create or delete the Arc server resource  | When connecting or disconnecting a server, only  | [Public, unless a resource management private link is also configured](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/create-private-link-access-portal)  |
 | *.his.arc.azure.com | Metadata and hybrid identity services  | Always  | Private |
-| *.guestconfiguration.azure.com | Content Cell  | Always  | Private  |
+| *.guestconfiguration.azure.com |Notification service for extension and connectivity scenarios  | Always  | Public  |
 | *.guestnotificationservice.azure.com | Notification service for extension and connectivity scenarios  | If using SSH or Windows Admin Center from Azure    | Public  |
-| azgn*.servicebus.windows.net | Content Cell  | Content Cell  | Public  |
-| *.servicebus.windows.net  | Content Cell  | Content Cell  | Public |
+| azgn*.servicebus.windows.net | Notification service for extension and connectivity scenarios | Always | Public  |
+| *.servicebus.windows.net  | For Windows Admin Center and SSH scenarios  | CIf using SSH or Windows Admin Center from Azure  | Public |
 | *.waconazure.com  | Content Cell  | Content Cell  | Public  |
 | *.blob.core.windows.net| Download source for Azure Arc-enabled servers’ extensions | Always, except when using private endpoints  |Not used when private link is configured  |
-| dc.services.visualstudio.com | Content Cell  | Content Cell  | Public  |
-|san-af-<region>-prod.azurewebsites.net  | Content Cell  | Content Cell  | Public  |
+| dc.services.visualstudio.com | Agent telemetry  | Optional, not used in agent versions 1.24+  | Public  |
+|san-af-<region>-prod.azurewebsites.net  | Azure Arc data processing service  | For SQL Server enabled by Azure Arc. The Azure Extension for SQL Server uploads inventory and billing information to the data processing service. | Public  |
 
 
 
