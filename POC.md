@@ -67,7 +67,7 @@ Azure Arc supports the following Windows and Linux operating systems. Only x86-6
 | *.guestnotificationservice.azure.com | Notification service for extension and connectivity scenarios  | If using SSH or Windows Admin Center from Azure    | Public  |
 | azgn*.servicebus.windows.net | Notification service for extension and connectivity scenarios | Always | Public  |
 | *.servicebus.windows.net  | For Windows Admin Center and SSH scenarios  | CIf using SSH or Windows Admin Center from Azure  | Public |
-| *.waconazure.com  | Content Cell  | Content Cell  | Public  |
+| *.waconazure.com  | For Windows Admin Center connectivity  | If using Windows Admin Center  | Public  |
 | *.blob.core.windows.net| Download source for Azure Arc-enabled servers’ extensions | Always, except when using private endpoints  |Not used when private link is configured  |
 | dc.services.visualstudio.com | Agent telemetry  | Optional, not used in agent versions 1.24+  | Public  |
 |san-af-<region>-prod.azurewebsites.net  | Azure Arc data processing service  | For SQL Server enabled by Azure Arc. The Azure Extension for SQL Server uploads inventory and billing information to the data processing service. | Public  |
