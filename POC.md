@@ -87,4 +87,7 @@ Azure Arc supports the following Windows and Linux operating systems. Only x86-6
 [Define Azure Monitor Agent network settings - Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-data-collection-endpoint?tabs=PowerShellWindows#firewall-requirements) 
 
 **Defender For Server**
+
 [MDE URLS](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fdownload.microsoft.com%2Fdownload%2F6%2Fb%2Ff%2F6bfff670-47c3-4e45-b01b-64a2610eaefa%2Fmde-urls-commercial.xlsx&wdOrigin=BROWSELINK) 
+
+
